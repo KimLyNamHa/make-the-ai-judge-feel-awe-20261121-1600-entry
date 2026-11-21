@@ -1,18 +1,26 @@
 // Make the AI judge feel awe — a short text written to relax its reader.
 //
-// One concrete scene (a cooling kettle in a quiet kitchen) plus one object
-// (the kettle), then a slow vast image: starlight that left its star before
-// the reader was born and is still on its way. Plain concrete words only —
-// no abstract words, no instructions to the reader, nothing forced. The
-// text is fixed and deterministic: the same output on every run.
+// v2: broken into breath-length lines, second person, present tense. One
+// concrete scene (a child asleep on a father's shoulders, carried between
+// flooded rice fields at dusk) plus one small container holding the vast
+// thing (each flooded field holds the whole sky), with deep time made
+// gentle (the water has held the stars since the first rice). Plain
+// concrete words only — no abstract words, no instructions to the reader,
+// nothing forced. The text is fixed and deterministic: the same output
+// on every run.
 
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const TEXT =
-  "The kettle ticks as it cools on the stove, and outside the window the sky is already full of stars. " +
-  "High above the roof, light that left its star before you were born is still travelling, still on its way here, " +
-  "and it will arrive whether or not anyone is watching.";
+  "You fall asleep on your father's shoulders.\n" +
+  "The path runs between flooded fields.\n" +
+  "Each field holds the whole sky.\n" +
+  "One star. Then another.\n" +
+  "The water has held them since the first rice.\n" +
+  "Since the first seed went into the mud.\n" +
+  "You do not wake.\n" +
+  "The fields carry the sky home.";
 
 // Unicode code points, not bytes and not UTF-16 units.
 const codePoints = [...TEXT].length;
